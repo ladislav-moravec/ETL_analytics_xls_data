@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ETL_analytics_xls_data.iml" filepath="$PROJECT_DIR$/.idea/ETL_analytics_xls_data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ETL_example_xls_data.iml" filepath="$PROJECT_DIR$/.idea/ETL_example_xls_data.iml" />
     </modules>
   </component>
 </project>
