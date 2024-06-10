@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Get preview of source data
 def get_data_preview(file_path):
@@ -94,7 +94,8 @@ def apply_regression_model(df_purchases):
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
-    return model, mse
+    mae = mean_absolute_error(y_test, y_pred)
+    return model, mse, mae
 
 
 # Calculate campaign costs
@@ -127,8 +128,9 @@ def main():
     print(f'Medián výše nákupu: {median_purchase_amount}')
     print(f'Směrodatná odchylka výše nákupu: {std_dev_purchase_amount}')
 
-    model, mse = apply_regression_model(df_purchases)
+    model, mse, mae = apply_regression_model(df_purchases)
     print(f'Model Mean Squared Error: {mse}')
+    print(f'Model Mean Absolute Error: {mae}')
 
     # Calculate campaign costs
     fixed_costs = 38000
